@@ -1,0 +1,3 @@
+rootProject.name = "SingleRecyclerAdapter"
+include ':sample'
+include ':single-recycle-adapter'

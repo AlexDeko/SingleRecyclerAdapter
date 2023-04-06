@@ -1,0 +1,41 @@
+plugins {
+    id 'java-library'
+    id "org.jetbrains.kotlin.jvm"
+    id 'com.stepango.aar2jar'
+}
+
+ext {
+    groupId = 'com.github.AlexDeko'
+    artifactId = "single-recycler-adapter"
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    withSourcesJar()
+    withJavadocJar()
+}
+
+dependencies {
+    implementationAar rootProject.ext.dependencies.coreKtx
+    implementationAar rootProject.ext.dependencies.core
+    implementationAar rootProject.ext.dependencies.fragmentKtx
+    implementationAar rootProject.ext.dependencies.fragment
+    implementationAar rootProject.ext.dependencies.androidxCollection
+    compileOnlyAar rootProject.ext.dependencies.viewBinding
+    implementationAar rootProject.ext.dependencies.lifecycleCommon
+    implementationAar rootProject.ext.dependencies.recyclerview
+    compileOnly rootProject.ext.dependencies.annotations
+    compileOnlyAar rootProject.ext.dependencies.activity
+    compileOnlyAar rootProject.ext.dependencies.savedstate
+    compileOnlyAar rootProject.ext.dependencies.lifecycleViewmodel
+    compileOnlyAar rootProject.ext.dependencies.lifecycleRuntime
+    compileOnly androidJar
+}
