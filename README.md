@@ -8,7 +8,7 @@ allprojects {
   }
 }
 dependencies {
-    implementation 'com.github.AlexDeko:SingleRecyclerAdapter:1.0.0'
+    implementation 'com.github.AlexDeko:SingleRecyclerAdapter:1.0.1'
     
 }
 ```
