@@ -12,6 +12,8 @@ ext {
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
     kotlinOptions {
         jvmTarget = "1.8"
+        kotlinOptions.freeCompilerArgs +=
+                ['-module-name', "com.github.alexdeko.single-recyler-adapter"]
     }
 }
 
@@ -39,3 +41,6 @@ dependencies {
     compileOnlyAar rootProject.ext.dependencies.lifecycleRuntime
     compileOnly androidJar
 }
+
+
+apply from: rootProject.file('publishing.gradle')
