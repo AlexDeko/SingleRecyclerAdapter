@@ -13,7 +13,7 @@ class SingleRecyclerAdapter(
 
     private val items
         get() = differ.currentList
-    var differ: AsyncListDiffer<BindingClass> = AsyncListDiffer(
+    private var differ: AsyncListDiffer<BindingClass> = AsyncListDiffer(
         this@SingleRecyclerAdapter,
         BindingDiffUtilItemCallback()
     )

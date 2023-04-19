@@ -1,0 +1,44 @@
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.kotlin
+                artifact(sourcesJar)
+                artifact(javadocJar)
+
+                groupId = 'com.github.AlexDeko'
+                artifactId = "SingleRecyclerAdapter"
+                version = rootProject.ext.versionName
+
+
+                pom {
+                    name = 'SingleRecyclerAdapter'
+                    description = 'Make work with Recycler Adapter simpler'
+                    url = 'https://github.com/AlexDeko/SingleRecyclerAdapter'
+
+                    licenses {
+                        license {
+                            name = 'The Apache License, Version 2.0'
+                            url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id = 'AlexDeko'
+                            name = 'Alexandr Deynenko'
+                            email = 'deko.world.project@gmail.com'
+                        }
+                    }
+
+                    scm {
+                        url = 'https://github.com/AlexDeko/SingleRecyclerAdapter'
+                    }
+                }
+            }
+        }
+    }
+}
