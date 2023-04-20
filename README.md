@@ -1,3 +1,4 @@
+[![](https://jitpack.io/v/AlexDeko/SingleRecyclerAdapter.svg)](https://jitpack.io/#AlexDeko/SingleRecyclerAdapter)
 ## Add the library to a project
 
 ```groovy
